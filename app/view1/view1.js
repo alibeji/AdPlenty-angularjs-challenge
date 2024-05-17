@@ -14,26 +14,37 @@ angular
     },
   ])
   .controller("View1Ctrl", [
-    "$http",
-    function ($http) {
-      let vm=this
-      vm.images=null
+    "$http", "$scope",
+    function($http, $scope) { 
+      let vm = this;
+      vm.images = null;
+      vm.searchTerm = "green";
 
-      $http({
-        method: "GET",
-        url: "https://api.unsplash.com/search/photos",
-        params: {
-          query: "green",
-          page: 1,
-          per_page: 9,
-          client_id: "mc022uV3PnBEenyHqnvPyCbvybr9q1FohSeLtqly80Q",
-        },
-      })
-        .then(function (response) {
-          vm.images=response.data
+      function searchImages() {
+        $http({
+          method: "GET",
+          url: "https://api.unsplash.com/search/photos",
+          params: {
+            query: vm.searchTerm,
+            page: 1,
+            per_page: 9,
+            client_id: "mc022uV3PnBEenyHqnvPyCbvybr9q1FohSeLtqly80Q",
+          },
         })
-        .catch(function (error) {
-          console.error("Error:", error);
-        });
-    },
+          .then(function(response) {
+            vm.images = response.data;
+          })
+          .catch(function(error) {
+            console.error("Error:", error);
+          });
+      }
+
+      searchImages();
+
+      vm.searchOnEnter = function($event) {
+        if ($event.keyCode === 13) {
+          searchImages();
+        }
+      };
+    }
   ]);

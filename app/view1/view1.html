@@ -1,4 +1,5 @@
 <div ng-controller="View1Ctrl as vm" >
+    <input type="text" name="search bar" ng-model="vm.searchTerm" placeholder="Search..." ng-keypress="vm.searchOnEnter($event)" >
     <div class="view1-grid">
         <div ng-repeat="photo in vm.images.results" class="view1-image-container">
         <img ng-src="{{ photo.urls.regular }}" alt="{{ photo.description }}">
