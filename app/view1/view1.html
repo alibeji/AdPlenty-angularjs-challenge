@@ -1,1 +1,8 @@
-<p>This is the partial for view 1.</p>
+<div ng-controller="View1Ctrl as vm" >
+    <div class="view1-grid">
+        <div ng-repeat="photo in vm.images.results" class="view1-image-container">
+        <img ng-src="{{ photo.urls.regular }}" alt="{{ photo.description }}">
+    </div>
+    </div>
+    
+</div>

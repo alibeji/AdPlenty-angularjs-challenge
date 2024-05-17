@@ -1,5 +1,8 @@
 /* app css stylesheet */
-
+body{
+  background-color: #ede7e9;
+  color: #303738;
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -23,3 +26,34 @@
   content: "|";
   padding-right: 0.3em;
 }
+
+.view1-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    max-width: 36rem;
+}
+
+
+.view1-image-container {
+  width: 12rem; 
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  overflow-x: hidden;
+  transition: all 0.5s ease;
+  box-shadow: 0 0 0 black;
+}
+
+.view1-image-container img {
+  width: auto;
+  height: 100%;
+  
+}
+
+.view1-image-container:hover {
+  box-shadow: 0.25rem 0.25rem 0 #303738;
+}
+
