@@ -28,8 +28,5 @@
     </button>
   </div>
 
-  <image-gallery
-    info="vm.images"
-    ng-if="vm.images.results.length > 0"
-  ></image-gallery>
+  <image-gallery info="vm" ng-if="vm.images.results.length > 0"></image-gallery>
 </main>
