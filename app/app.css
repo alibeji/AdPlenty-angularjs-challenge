@@ -96,6 +96,14 @@ p {
   display: flex;
 }
 
+.view1-image-container:focus .image-details {
+  display: flex;
+}
+
+.view1-image-container:focus img {
+  transform: scale(1.2);
+}
+
 .view1-image-container .icon {
   height: 1rem;
   width: 1rem;
