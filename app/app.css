@@ -23,6 +23,7 @@ body {
 
 h1 {
   margin: 0 0 1rem 0;
+  text-align: center;
 }
 
 main {
@@ -36,10 +37,12 @@ main {
 }
 
 .view1-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: row;
   gap: 0.5rem;
-  max-width: 48rem;
+  max-width: 50rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .view1-image-container {
@@ -121,6 +124,15 @@ p {
   display: block;
 }
 
+.search-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .search-group input {
   padding: 0.5rem 0.9rem;
   border-radius: 2rem;
@@ -173,6 +185,7 @@ p {
   justify-content: center;
   align-content: center;
   gap: 1rem;
+  order: 0;
 }
 
 .pagination-group button {
@@ -207,4 +220,22 @@ p {
 .error {
   background-color: #ffe0b2;
   color: #b71c1c;
+}
+
+@media only screen and (max-width: 625px) {
+  .pagination-group {
+    order: 1;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .search-group input {
+    width: 100%;
+  }
+  .search-group button {
+    margin-left: 0;
+  }
+  .search-group {
+    justify-content: space-between;
+  }
 }
