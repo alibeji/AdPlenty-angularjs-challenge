@@ -34,10 +34,6 @@ angular
             per_page: 8,
             client_id: 'mc022uV3PnBEenyHqnvPyCbvybr9q1FohSeLtqly80Q',
           },
-          headers: {
-            Authorization:
-              'Client-ID mc022uV3PnBEenyHqnvPyCbvybr9q1FohSeLtqly80Q',
-          },
         })
           .then(function (response) {
             vm.images = response.data;
