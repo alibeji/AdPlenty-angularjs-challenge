@@ -22,6 +22,7 @@ angular
       vm.searchTerm = '';
       vm.currentPage = 1;
       vm.isLoading = false;
+      vm.searchError = false;
 
       vm.imageContainerWidth = 192;
       vm.imageHoverScaleRatio = 1.2;
@@ -31,6 +32,7 @@ angular
 
       const searchImages = () => {
         vm.isLoading = true;
+        vm.searchError = false;
         $http({
           method: 'GET',
           url: 'https://api.unsplash.com/search/photos',
@@ -46,8 +48,8 @@ angular
             vm.isLoading = false;
             console.log(response.data);
           })
-          .catch(function (error) {
-            console.error('Error:', error);
+          .catch(function () {
+            vm.searchError = true;
             vm.isLoading = false;
           });
       };

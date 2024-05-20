@@ -163,3 +163,22 @@ p {
 .pagination-group button:disabled .icon {
   opacity: 0.2;
 }
+
+.no-results {
+  text-transform: none;
+  max-width: 50rem;
+  text-align: center;
+  padding: 1rem 2rem;
+  background-color: #fff9c4;
+  color: #8d6e63;
+  border: 1px #8d6e63 solid;
+  border-radius: 1rem;
+  height: min-content;
+  white-space: wrap;
+  max-height: unset;
+}
+
+.error {
+  background-color: #ffe0b2;
+  color: #b71c1c;
+}
