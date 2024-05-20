@@ -1,0 +1,27 @@
+<section class="main-content-grid">
+  <a
+    ng-href="{{photo.links.html}}"
+    ng-repeat="photo in info.images.results"
+    class="main-content-image-container"
+    target="_blank"
+  >
+    <img
+      ng-src="{{ photo.urls.full}}&fit=crop&h={{info.imageDimensions}}&w={{info.imageDimensions}}&auto=format"
+      alt="{{ photo.alt_description }}"
+      height="auto"
+      ng-style="{width: '{{info.imageContainerWidth}}px'}"
+    />
+
+    <div class="image-details">
+      <h3>{{ photo.user.first_name }} {{photo.user.last_name}}</h3>
+      <p>{{ photo.alt_description }}</p>
+      <p>{{ photo.created_at | date }}</p>
+    </div>
+    <img
+      src="assets/icons/external-link-alt-solid.svg"
+      alt="external-link-icon"
+      class="icon"
+      aria-hidden
+    />
+  </a>
+</section>
