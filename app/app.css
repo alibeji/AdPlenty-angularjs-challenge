@@ -1,5 +1,4 @@
 /* app css stylesheet */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 html {
   box-sizing: border-box;
@@ -12,7 +11,17 @@ html {
 body {
   background-color: #ede7e9;
   color: #303738;
-  font-family: 'Poppins';
+  font-family: 'Atkinson Hyperlegible';
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem 0;
+  gap: 1rem;
 }
 
 .view1-grid {
@@ -28,7 +37,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   overflow: hidden;
   transition: all 0.5s ease;
   box-shadow: 0 0 0 black;
@@ -39,7 +48,6 @@ body {
 
 .view1-image-container img {
   object-fit: cover;
-  height: 100%;
   transition: all 0.5s ease;
 }
 
@@ -72,10 +80,6 @@ p {
   text-overflow: ellipsis;
   text-transform: capitalize;
 }
-
-/* .view1-image-container:hover {
-  box-shadow: 0.25rem 0.25rem 0 #303738;
-} */
 
 .view1-image-container:hover img {
   transform: scale(1.2);
