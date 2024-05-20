@@ -1,5 +1,5 @@
 <main ng-controller="View1Ctrl as vm">
-  <div>
+  <div class="search-group">
     <input
       type="text"
       name="search bar"
@@ -9,12 +9,18 @@
     />
     <button ng-click="vm.searchImages()">Search</button>
   </div>
-  <div>
+  <div class="pagination-group">
     <button
+      aria-label="Previous page"
       ng-click="vm.changePage('prev')"
       ng-disabled="vm.currentPage < 2 || vm.isLoading"
     >
-      Previous
+      <img
+        src="assets/icons/arrow-left-solid.svg"
+        alt="arrow-left icon"
+        class="icon"
+        aria-hidden
+      />
     </button>
     <span
       >Page {{vm.currentPage}} {{vm.images.total_pages ? "of " +
@@ -23,8 +29,14 @@
     <button
       ng-click="vm.changePage('next')"
       ng-disabled="vm.isLoading || vm.currentPage >= vm.images.total_pages"
+      aria-label="Next page"
     >
-      Next
+      <img
+        src="assets/icons/arrow-right-solid.svg"
+        alt="arrow-right icon"
+        class="icon"
+        aria-hidden
+      />
     </button>
   </div>
 
