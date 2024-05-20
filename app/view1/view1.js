@@ -19,7 +19,7 @@ angular
     function ($http) {
       const vm = this;
       vm.images = null;
-      vm.searchTerm = 'landscape';
+      vm.searchTerm = '';
       vm.currentPage = 1;
       vm.isLoading = false;
 
@@ -35,7 +35,7 @@ angular
           method: 'GET',
           url: 'https://api.unsplash.com/search/photos',
           params: {
-            query: vm.searchTerm,
+            query: vm.searchTerm || 'landscape',
             page: vm.currentPage,
             per_page: 8,
             client_id: 'mc022uV3PnBEenyHqnvPyCbvybr9q1FohSeLtqly80Q',
@@ -56,6 +56,7 @@ angular
         vm.currentPage = 1;
         searchImages();
       };
+
       vm.changePage = (direction) => {
         vm.currentPage =
           direction === 'next' ? vm.currentPage + 1 : vm.currentPage - 1;
