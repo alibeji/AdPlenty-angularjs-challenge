@@ -2,7 +2,7 @@
 :root {
   --main-background-color: #f6f7f6;
   --main-text-color: #1e3d5f;
-  --secondary-color: #ea3d37;
+  --secondary-color: #d0241e;
   --font-family: 'Atkinson Hyperlegible';
   --transition-medium: all 0.5s ease;
 }
@@ -19,6 +19,10 @@ body {
   background-color: var(--main-background-color);
   color: var(--main-text-color);
   font-family: var(--font-family);
+}
+
+h1 {
+  margin: 0 0 1rem 0;
 }
 
 main {
