@@ -146,7 +146,7 @@ p {
 }
 
 .search-group select {
-  padding: 0.5rem 2rem 0.5rem 0.9rem;
+  padding: 0.5rem 2.5rem 0.5rem 0.9rem;
   border-radius: 2rem;
   font-size: 1rem;
   color: var(--main-text-color);
