@@ -23,6 +23,12 @@ angular
       vm.currentPage = 1;
       vm.isLoading = false;
 
+      vm.imageContainerWidth = 192;
+      vm.imageHoverScaleRatio = 1.2;
+      vm.imageDimensions = 192 * window.devicePixelRatio * 1.2;
+
+      console.log(vm.imageDimensions);
+
       const searchImages = () => {
         vm.isLoading = true;
         $http({
@@ -46,8 +52,6 @@ angular
           });
       };
 
-      searchImages();
-
       vm.searchImages = () => {
         vm.currentPage = 1;
         searchImages();
@@ -64,5 +68,7 @@ angular
           searchImages();
         }
       };
+
+      searchImages();
     },
   ]);

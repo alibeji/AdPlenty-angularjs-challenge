@@ -1,15 +1,23 @@
 <section class="view1-grid">
-  <div ng-repeat="photo in info.results" class="view1-image-container">
-    <img ng-src="{{ photo.urls.regular }}" alt="{{ photo.alt_description }}" />
-    <div class="image-details">
-      <h3>{{ photo.user.first_name }} {{photo.user.last_name}}</h3>
-      <p>{{ photo.alt_description }}</p>
-      <p>{{ photo.created_at | date }}</p>
-    </div>
-    <img
-      src="assets/icons/external-link-alt-solid.svg"
-      alt="external-link-icon"
-      class="icon"
-    />
+  <div ng-repeat="photo in info.images.results" class="view1-image-container">
+    <a ng-href="{{photo.links.html}}" target="_blank">
+      <img
+        ng-src="{{ photo.urls.full}}&fit=crop&h={{info.imageDimensions}}&w={{info.imageDimensions}}"
+        alt="{{ photo.alt_description }}"
+        height="auto"
+        ng-style="{width: '{{info.imageContainerWidth}}px'}"
+      />
+
+      <div class="image-details">
+        <h3>{{ photo.user.first_name }} {{photo.user.last_name}}</h3>
+        <p>{{ photo.alt_description }}</p>
+        <p>{{ photo.created_at | date }}</p>
+      </div>
+      <img
+        src="assets/icons/external-link-alt-solid.svg"
+        alt="external-link-icon"
+        class="icon"
+      />
+    </a>
   </div>
 </section>
