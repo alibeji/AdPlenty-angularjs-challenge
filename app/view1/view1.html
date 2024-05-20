@@ -7,6 +7,15 @@
       placeholder="Search..."
       ng-keypress="vm.searchOnEnter($event)"
     />
+    <select
+      ng-model="vm.sortParam"
+      ng-change="vm.updateSortParam()"
+      class="customSelect"
+      aria-label="Select an option"
+    >
+      <option value="latest">Latest</option>
+      <option value="relevant">Relevant</option>
+    </select>
     <button ng-click="vm.searchImages()">Search</button>
   </div>
   <div class="pagination-group">

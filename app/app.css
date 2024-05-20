@@ -141,6 +141,28 @@ p {
   cursor: pointer;
 }
 
+.search-group select {
+  padding: 0.5rem 2rem 0.5rem 0.9rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  color: var(--main-text-color);
+  border: solid 1px var(--secondary-color);
+  font-family: var(--font-family);
+  background-color: var(--main-background-color);
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='currentColor' d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 5px center;
+}
+
+.search-group select option {
+  padding: 0.5rem;
+}
+
 .pagination-group {
   display: flex;
   flex-direction: row;
